@@ -1,10 +1,14 @@
-import logoSvg from "@/assets/react.svg";
-import { Button } from "./components/ui/button";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
 function App() {
   return (
-    <div>
-      <img src={logoSvg} alt="" />
-      <Button>Hello React</Button>
+    <div className="flex flex-col w-full h-full relative">
+      <Header />
+      <Main>
+        123
+      </Main>
+      <Footer />
     </div>
   );
 }
