@@ -6,6 +6,12 @@ import Main from "./components/Main";
 import { Textarea } from "./components/ui/textarea";
 function App() {
   const [textValue, setTextValue] = useState("");
+  const [stats, setStats] = useState({
+    numberOfWords: 0,
+    numberOfCharacters: 0,
+    instagramCharactersLeft: 280,
+    facebookCharactersLeft: 2200,
+  });
 
   const onChangeValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = e.target.value;
@@ -21,7 +27,7 @@ function App() {
           placeholder="Type your message here."
           className="rounded-none border-none"
         />
-        <Counter className=" xl:flex-[40%] md:flex-[40%] sm:flex-[55%]" />
+        <Counter stats={stats} className=" xl:flex-[40%] md:flex-[40%] sm:flex-[55%]" />
       </Main>
       <Footer />
     </div>
