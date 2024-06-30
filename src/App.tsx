@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import { Textarea } from "./components/ui/textarea";
+import { INSTAGRAM_MAX_CHARACTERS } from "./lib/constants";
+import { INSPECT_MAX_BYTES } from "buffer";
 function App() {
   const [textValue, setTextValue] = useState("");
   const [stats, setStats] = useState({
@@ -25,6 +27,9 @@ function App() {
     setStats({
       ...stats,
       numberOfWords: wordsValue,
+      numberOfCharacters: val.length,
+      instagramCharactersLeft: INSTAGRAM_MAX_CHARACTERS - val.length,
+      facebookCharactersLeft: INSPECT_MAX_BYTES - val.length,
     });
   };
   return (
